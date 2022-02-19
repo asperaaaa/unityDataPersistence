@@ -22,34 +22,40 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        //Load();
+        Load();
     }
 
-    //[System.Serializable]
-    //class SaveData
-    //{
-    //    public string PlayerName;
-    //}
+    [System.Serializable]
+    class SaveData
+    {
+        public string PlayerName;
+        public string BestPlayer;
+        public int BestScore;
+    }
 
-    //public void Save()
-    //{
-    //    SaveData data = new SaveData();
-    //    data.PlayerName = PlayerName;
+    public void Save()
+    {
+        SaveData data = new SaveData();
+        data.PlayerName = PlayerName;
+        data.BestPlayer = BestPlayer;
+        data.BestScore = BestScore;
 
-    //    string json = JsonUtility.ToJson(data);
+        string json = JsonUtility.ToJson(data);
 
-    //    File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
-    //}
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
 
-    //public void Load()
-    //{
-    //    string path = Application.persistentDataPath + "/savefile.json";
-    //    if (File.Exists(path))
-    //    {
-    //        string json = File.ReadAllText(path);
-    //        SaveData data = JsonUtility.FromJson<SaveData>(json);
+    public void Load()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-    //        PlayerName = data.PlayerName;
-    //    }
-    //}
+            PlayerName = data.PlayerName;
+            BestPlayer = data.BestPlayer;
+            BestScore = data.BestScore;
+        }
+    }
 }

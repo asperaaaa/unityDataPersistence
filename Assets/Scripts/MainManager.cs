@@ -89,7 +89,8 @@ public class MainManager : MonoBehaviour
         if (m_Points > GameManager.Instance.BestScore)
         {
             GameManager.Instance.BestPlayer = m_PlayerName;
-            GameManager.Instance.BestScore = m_Points;           
+            GameManager.Instance.BestScore = m_Points;
+            GameManager.Instance.Save();
         }
         
         string bestPlayer = GameManager.Instance.BestPlayer;
