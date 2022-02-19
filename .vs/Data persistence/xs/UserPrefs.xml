@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{29FB67C1-A0D5-E9DD-416B-E32F9A7D309C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuUIHandler.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/Scripts/MenuUIHandler.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/MenuUIHandler.cs" Line="12" Column="11" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/MainManager.cs" Line="19" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
